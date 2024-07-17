@@ -27,14 +27,15 @@ greet()
 softs = [["google","Google Chrome"],["settings","Settings"],["vs code","Code"],["spotify","Spotify"],["chess","3D Chess Game"],["calculator","Calculator"],["calendar","Calendar"],["camera","Camera"],["clock","Clock"],["figma","Figma"],["sublime text","Submlime Text"],["my sql","mysql command line client"],["cmd","command prompt"],["python","pycharm community"],["github","Github "]] 
 softs = [["google","Google Chrome"],["settings","Settings"],["vs code","Code"],["spotify","Spotify"],["chess","3D Chess Game"],["calculator","Calculator"],["calendar","Calendar"],["camera","Camera"],["clock","Clock"],["figma","Figma"],["sublime text","Submlime Text"],["my sql","mysql command line client"],["cmd","command prompt"],["python","pycharm community"],["github","Github Desktop"]] 
 while True:
-    try:
-        with sr.Microphone() as source:
-            print("Listening........")
-            audio = r.listen(source)
-            print("Recognizing.......")
-            MyText = r.recognize_google(audio, language='en-in')
-            speak(f"command accepted{MyText}")
+    # try:
+    #     with sr.Microphone() as source:
+    #         print("Listening........")
+    #         audio = r.listen(source)
+    #         print("Recognizing.......")
+    #         MyText = r.recognize_google(audio, language='en-in')
+    #         speak(f"command accepted{MyText}")
             # speak(f"executing {MyText}")
+            MyText = input("Enter the command")
             
             if "date" in MyText.lower():
                 today = datetime.date.today()
@@ -73,7 +74,7 @@ while True:
             if "stop" in MyText.lower():
                 speak("See you soon master")
                 break
-    except sr.RequestError as e:
-        print("Could not request results; {0}".format(e))
-    except sr.UnknownValueError:
-        print("unknown error occurred")
+    # except sr.RequestError as e:
+    #     print("Could not request results; {0}".format(e))
+    # except sr.UnknownValueError:
+    #     print("unknown error occurred")
